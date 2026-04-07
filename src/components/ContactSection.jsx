@@ -147,7 +147,7 @@ const ContactSection = () => {
               <label
                 htmlFor="contact-name"
                 className="block text-xs font-bold uppercase tracking-widest mb-1"
-                style={{ color: '#FFD900' }}
+                style={{ color: '#FFD900', }}
               >
                 Name
               </label>
@@ -162,11 +162,12 @@ const ContactSection = () => {
                 className="w-full px-4 py-3 text-sm outline-none rounded-none transition-all duration-200"
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #d8d8d8',
+                  border: '1px solid white',
                   color: '#333333',
+                  borderRadius: '4px'  
                 }}
                 onFocus={(e) => (e.target.style.borderColor = '#FFC107')}
-                onBlur={(e) => (e.target.style.borderColor = '#d8d8d8')}
+                onBlur={(e) => (e.target.style.borderColor = 'white')}
               />
             </motion.div>
 
@@ -175,7 +176,7 @@ const ContactSection = () => {
               <label
                 htmlFor="contact-email"
                 className="block text-xs font-bold uppercase tracking-widest mb-1"
-                style={{ color: '#FFC107' }}
+                style={{ color: '#FFD900' }}
               >
                 Email
               </label>
@@ -190,11 +191,12 @@ const ContactSection = () => {
                 className="w-full px-4 py-3 text-sm outline-none rounded-none transition-all duration-200"
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #d8d8d8',
+                  border: '1px solid white',
                   color: '#333333',
+                  borderRadius: '4px'   
                 }}
                 onFocus={(e) => (e.target.style.borderColor = '#FFC107')}
-                onBlur={(e) => (e.target.style.borderColor = '#d8d8d8')}
+                onBlur={(e) => (e.target.style.borderColor = 'white')}
               />
             </motion.div>
 
@@ -203,7 +205,7 @@ const ContactSection = () => {
               <label
                 htmlFor="contact-phone"
                 className="block text-xs font-bold uppercase tracking-widest mb-1"
-                style={{ color: '#FFC107' }}
+                style={{ color: '#FFD900' }}
               >
                 Contact Number
               </label>
@@ -217,11 +219,12 @@ const ContactSection = () => {
                 className="w-full px-4 py-3 text-sm outline-none rounded-none transition-all duration-200"
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #d8d8d8',
+                  border: '1px solid white',
                   color: '#333333',
+                  borderRadius: '4px'   
                 }}
                 onFocus={(e) => (e.target.style.borderColor = '#FFC107')}
-                onBlur={(e) => (e.target.style.borderColor = '#d8d8d8')}
+                onBlur={(e) => (e.target.style.borderColor = 'white')}
               />
             </motion.div>
 
@@ -230,7 +233,7 @@ const ContactSection = () => {
               <label
                 htmlFor="contact-message"
                 className="block text-xs font-bold uppercase tracking-widest mb-1"
-                style={{ color: '#FFC107' }}
+                style={{ color: '#FFD900' }}
               >
                 Message:
               </label>
@@ -244,11 +247,12 @@ const ContactSection = () => {
                 className="w-full px-4 py-3 text-sm outline-none rounded-none resize-none transition-all duration-200"
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #d8d8d8',
+                  border: '1px solid white  ',
                   color: '#333333',
+                  borderRadius: '4px'   
                 }}
                 onFocus={(e) => (e.target.style.borderColor = '#FFC107')}
-                onBlur={(e) => (e.target.style.borderColor = '#d8d8d8')}
+                onBlur={(e) => (e.target.style.borderColor = 'white')}
               />
             </motion.div>
 
@@ -256,14 +260,16 @@ const ContactSection = () => {
             <motion.div variants={itemVariants}>
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02, backgroundColor: '#e6ac00' }}
+                whileHover={{ scale: 1.02, backgroundColor: '#e6ac00', color: 'white'}}
                 whileTap={{ scale: 0.97 }}
                 className="w-full py-4 text-sm font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 transition-colors duration-200"
                 style={{
-                  backgroundColor: '#FFC107',
+                  backgroundColor: '#FFD900',
                   color: '#111111',
                   border: 'none',
                   cursor: 'pointer',
+                  borderRadius: '4px'     ,
+                  color: 'white'  
                 }}
               >
                 {submitted ? (
@@ -271,7 +277,6 @@ const ContactSection = () => {
                 ) : (
                   <>
                     SUBMIT <ArrowRight size={16} strokeWidth={2.5} />
-                    <span style={{ letterSpacing: '0.05em' }}>→</span>
                   </>
                 )}
               </motion.button>
