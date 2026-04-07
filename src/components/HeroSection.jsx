@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Import videos
+import heroVideo1 from "../assets/video/hero-1.mp4";
+import heroVideo2 from "../assets/video/hero-2.mp4";
 
 const slides = [
   {
@@ -8,8 +12,7 @@ const slides = [
     title: "Building The Future With Strength & Reliability",
     description:
       "Providing Top-Notch Construction Solutions For Residential, Commercial, And Industrial Projects.",
-    image:
-      "https://images.unsplash.com/photo-1541888081155-27a9442a8b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    video: heroVideo1,
   },
   {
     id: 2,
@@ -17,29 +20,17 @@ const slides = [
     title: "Transforming Concepts Into Reality",
     description:
       "Expert construction management and design-build services tailored to your specific needs.",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-  },
-  {
-    id: 3,
-    subtitle: "SUSTAINABLE DEVELOPMENT",
-    title: "Eco-Friendly Construction Practices",
-    description:
-      "We integrate green technologies and sustainable materials to build a better tomorrow.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    video: heroVideo2,
   },
 ];
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 6000); // Change slide every 6 seconds
-    return () => clearInterval(timer);
-  }, []);
+  const handleVideoEnd = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -50,7 +41,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-[600px] md:h-[800px] overflow-hidden bg-black">
+    <div className="relative w-full h-[600px] md:h-[800px] lg:h-screen overflow-hidden ">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -60,23 +51,30 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          {/* Background Image with slight scale animation */}
-          <motion.div
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 6, ease: "easeOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-          />
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              ref={videoRef}
+              key={slides[currentSlide].video}
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnd}
+              className="w-full h-full object-cover"
+            >
+              <source src={slides[currentSlide].video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-          <div className="absolute inset-0 bg-black/40" />{" "}
-          {/* Extra darkening if needed */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
+          <div className="absolute inset-0 bg-black/40 z-10" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24 flex flex-col justify-center">
+      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24 flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -88,7 +86,7 @@ const HeroSection = () => {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.2, // Stagger text appearance
+                  staggerChildren: 0.2,
                   delayChildren: 0.3,
                 },
               },
@@ -168,3 +166,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
