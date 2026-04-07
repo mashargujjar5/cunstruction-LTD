@@ -6,6 +6,7 @@ import ServicesSection from './components/ServicesSection';
 
 import WhyChooseUs from './components/WhyChooseUs';
 import RecentProjects from './components/RecentProjects';
+import TraditionSection from './components/TraditionSection';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <ServicesSection />
       <WhyChooseUs />
       <RecentProjects />
+      <TraditionSection />
     </div>
   );
 }
