@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import homec1 from '../assets/video/homec1.mp4';
+import homec2 from '../assets/video/homec2.mp4';
+import homec3 from '../assets/video/homec3.mp4';
 
 const projects = [
   {
@@ -7,8 +10,8 @@ const projects = [
     region: "Australia",
     title: "Maple Residency Flyover",
     description: "A major infrastructure project enhancing urban connectivity with modern transit solutions.",
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800", // Replace with your image
-    video: "https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your video
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800",
+    video: homec1
   },
   {
     id: 2,
@@ -16,7 +19,7 @@ const projects = [
     title: "Skyline Commercial Plaza",
     description: "A high-rise commercial building designed for businesses, featuring open-plan office spaces and eco-friendly infrastructure.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800",
-    video: "https://www.w3schools.com/html/movie.mp4"
+    video: homec2
   },
   {
     id: 3,
@@ -24,7 +27,7 @@ const projects = [
     title: "Vogtle Units 3 and 4",
     description: "Advanced nuclear power facility construction focusing on sustainable energy production.",
     image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4"
+    video: homec3
   }
 ];
 
@@ -123,16 +126,16 @@ const ProjectCard = ({ project, index }) => {
 
 const RecentProjects = () => {
   return (
-    <section className="bg-white py-16 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-16  ">
+      <div className="">
         {/* Header Text */}
-        <div className="mb-12">
+        <div className="mb-12 ml-16">
           <p className="text-yellow-500 font-semibold mb-2">What We Done?</p>
           <h2 className="text-4xl font-extrabold text-gray-900">Our Recent Projects</h2>
         </div>
 
         {/* Grid Layout (Responsive: 1 col on mobile, 3 on desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:pl-60">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

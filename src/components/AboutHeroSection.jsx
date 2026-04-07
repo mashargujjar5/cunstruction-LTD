@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1541888081155-27a9442a8b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/images/about/hero_4.png",
   },
 ];
 
