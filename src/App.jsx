@@ -4,13 +4,19 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 
+import WhyChooseUs from './components/WhyChooseUs';
+import RecentProjects from './components/RecentProjects';
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <HeroSection />
+      
       <AboutSection />
       <ServicesSection />
+      <WhyChooseUs />
+      <RecentProjects />
     </div>
   );
 }
