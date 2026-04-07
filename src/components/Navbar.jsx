@@ -64,13 +64,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-64 px-4 py-4 shadow-md' : 'max-h-0 py-0'}`}>
         <div className="flex flex-col gap-4">
-          <a href="#" className="text-gray-900 font-bold block w-fit relative pb-1">
+          <Link to="/" className="text-gray-900 font-bold block w-fit relative pb-1" onClick={() => setIsMobileMenuOpen(false)}>
             Home
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#FFCC00]"></span>
-          </a>
-          <a href="#" className="text-gray-800 font-semibold hover:text-[#FFCC00] block">About Us</a>
-          <a href="#" className="text-gray-800 font-semibold hover:text-[#FFCC00] block">Services</a>
-          <a href="#" className="text-gray-800 font-semibold hover:text-[#FFCC00] block">Contact Us</a>
+          </Link>
+          <Link to="/about" className="text-gray-800 font-semibold hover:text-[#FFCC00] block" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/services" className="text-gray-800 font-semibold hover:text-[#FFCC00] block" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+          <Link to="/contact" className="text-gray-800 font-semibold hover:text-[#FFCC00] block" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
           <a href="#" className="inline-block border-[2px] border-[#FFCC00] text-[#FFCC00] px-6 py-2 rounded-full font-bold text-sm text-center hover:bg-[#FFCC00] hover:text-white transition-all duration-300 mt-2 w-full max-w-[220px] uppercase">
             Get a Free Quote
           </a>
