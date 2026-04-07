@@ -37,7 +37,8 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <section className="py-20 bg-[#f9fafb] px-4 md:px-8 overflow-hidden">
+    <div className="bg-white py-0.5">
+  <section className="py-8 bg-[#f9fafb] px-4 md:px-8 overflow-hidden my-16 rounded-xl max-w-7xl mx-auto">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div 
@@ -114,6 +115,7 @@ const TeamSection = () => {
         </motion.div>
       </div>
     </section>
+    </div>
   );
 };
 

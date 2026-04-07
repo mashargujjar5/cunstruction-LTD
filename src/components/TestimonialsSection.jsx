@@ -155,7 +155,7 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      style={{ backgroundColor: '#f5f5f5', padding: '72px 0 60px' }}
+      style={{ backgroundColor: 'white', padding: '72px 0 60px' }}
       className="font-sans overflow-hidden"
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>

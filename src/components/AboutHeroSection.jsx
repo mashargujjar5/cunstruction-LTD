@@ -4,23 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1541888081155-27a9442a8b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/images/about/hero_1.png",
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/images/about/hero_2.png",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/images/about/hero_3.png",
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1590644365607-b3d8c1e53ad6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1541888081155-27a9442a8b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   },
 ];
 

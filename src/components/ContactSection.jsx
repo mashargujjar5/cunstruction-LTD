@@ -60,7 +60,7 @@ const ContactSection = () => {
   return (
     <section
       style={{ backgroundColor: '#f0f0f0' }}
-      className="py-16 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden"
+      className="py-16 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden lg:mx-10"
     >
       <motion.div
         variants={containerVariants}
@@ -74,7 +74,7 @@ const ContactSection = () => {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-bold leading-snug"
+            className="text-3xl sm:text-3xl font-bold leading-snug"
             style={{ color: '#FFD900', fontStyle: 'italic' }}
           >
             We're Here to Help –{' '} Reach Out
