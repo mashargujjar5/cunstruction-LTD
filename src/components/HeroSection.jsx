@@ -68,8 +68,7 @@ const HeroSection = () => {
           </div>
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-10" />
         </motion.div>
       </AnimatePresence>
 
@@ -104,7 +103,7 @@ const HeroSection = () => {
                   transition: { duration: 0.6, ease: "easeOut" },
                 },
               }}
-              className="text-[#FFD700] font-bold uppercase tracking-wider text-sm md:text-base mb-2 md:mb-4"
+              className="text-[#FFD700] -mt-30 font-bold uppercase tracking-wider text-sm md:text-base mb-2 md:mb-4"
             >
               {slides[currentSlide].subtitle}
             </motion.h3>
