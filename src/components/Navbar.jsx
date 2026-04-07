@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,13 +28,13 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 lg:gap-12 text-[#1a1a1a] font-semibold text-[15px]">
-          <a href="#" className="relative text-[#1a1a1a] pb-[3px] flex flex-col">
+          <Link to="/" className="relative text-[#1a1a1a] pb-[3px] flex flex-col">
             Home
             <span className="absolute left-0 bottom-0 w-full h-[3px] bg-[#FFCC00]"></span>
-          </a>
-          <a href="#" className="hover:text-[#FFCC00] transition-colors duration-200">About Us</a>
-          <a href="#" className="hover:text-[#FFCC00] transition-colors duration-200">Services</a>
-          <a href="#" className="hover:text-[#FFCC00] transition-colors duration-200">Contact Us</a>
+          </Link>
+          <Link to="/about" className="hover:text-[#FFCC00] transition-colors duration-200">About Us</Link>
+          <Link to="/services" className="hover:text-[#FFCC00] transition-colors duration-200">Services</Link>
+          <Link to="/contact" className="hover:text-[#FFCC00] transition-colors duration-200">Contact Us</Link>
         </div>
 
         {/* Desktop Button */}
