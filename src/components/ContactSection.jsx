@@ -74,11 +74,11 @@ const ContactSection = () => {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-extrabold leading-snug"
-            style={{ color: '#FFC107', fontStyle: 'italic' }}
+            className="text-3xl sm:text-4xl font-bold leading-snug"
+            style={{ color: '#FFD900', fontStyle: 'italic' }}
           >
-            We're Here to Help –{' '}
-            <span className="block">Reach Out Anytime!</span>
+            We're Here to Help –{' '} Reach Out
+            <span className="block"> Anytime!</span>
           </motion.h2>
 
           {/* Subtext */}
@@ -97,14 +97,14 @@ const ContactSection = () => {
             <div className="flex items-start gap-4">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                style={{ backgroundColor: '#fff', border: '2px solid #FFC107' }}
+                style={{ backgroundColor: '#fff' }}
               >
-                <Mail size={18} strokeWidth={2} style={{ color: '#FFC107' }} />
+                <Mail size={18} strokeWidth={2} style={{ color: '#FFD900' }} />
               </div>
               <div>
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-0.5"
-                  style={{ color: '#FFC107' }}
+                  style={{ color: '#FFD900' }}
                 >
                   E-mail
                 </p>
@@ -118,14 +118,14 @@ const ContactSection = () => {
             <div className="flex items-start gap-4">
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                style={{ backgroundColor: '#fff', border: '2px solid #FFC107' }}
+                style={{ backgroundColor: '#fff',  }}
               >
                 <MapPin size={18} strokeWidth={2} style={{ color: '#FFC107' }} />
               </div>
               <div>
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-0.5"
-                  style={{ color: '#FFC107' }}
+                  style={{ color: '#FFD900' }}
                 >
                   Address
                 </p>
@@ -141,12 +141,13 @@ const ContactSection = () => {
         {/* ===== RIGHT SIDE – FORM ===== */}
         <motion.div variants={slideInRight}>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <h1 className='text-3xl font-bold' style={{ color: '#FFD900' }}>Get in Touch with Us!</h1>
             {/* Name */}
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="contact-name"
                 className="block text-xs font-bold uppercase tracking-widest mb-1"
-                style={{ color: '#FFC107' }}
+                style={{ color: '#FFD900' }}
               >
                 Name
               </label>

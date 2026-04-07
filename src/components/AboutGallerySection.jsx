@@ -1,5 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import one from '../assets/images/aboutsection.png'
+import two from '../assets/images/aboutsection2.png'
+import three from '../assets/images/aboutsection3.png'
+import four from '../assets/images/aboutsection4.png'
+import five from '../assets/images/aboutsection5.png'
+import six from '../assets/images/aboutsection6.png'
+
 
 const AboutGallerySection = () => {
   // Animation variants for staggered fade-in and slide-up
@@ -26,7 +33,7 @@ const AboutGallerySection = () => {
   return (
     <section className="bg-black w-full overflow-hidden">
       <motion.div 
-        className="flex flex-col w-full h-[60vh] md:h-[80vh] gap-1.5 md:gap-2 p-1.5 md:p-2 border-t-4 border-b-4 border-black"
+        className="flex flex-col w-full h-[60vh] md:h-[124vh] gap-1.5 md:gap-2 p-1.5 md:p-2 border-t-4 border-b-4 border-black"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -34,11 +41,11 @@ const AboutGallerySection = () => {
       >
         
         {/* Top Row */}
-        <div className="flex w-full h-1/2 gap-1.5 md:gap-2">
+        <div className="flex w-full h-[350px] gap-1.5 md:gap-2">
           {/* Top Left (w-45%) */}
           <motion.div variants={itemVariants} className="w-[45%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={one} 
               alt="City Construction" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -49,7 +56,7 @@ const AboutGallerySection = () => {
           {/* Top Middle (w-25%) */}
           <motion.div variants={itemVariants} className="w-[25%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={two}
               alt="Scaffolding workers" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -59,7 +66,7 @@ const AboutGallerySection = () => {
           {/* Top Right (w-30%) */}
           <motion.div variants={itemVariants} className="w-[30%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={three} 
               alt="Construction Sunset" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -68,11 +75,11 @@ const AboutGallerySection = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex w-full h-1/2 gap-1.5 md:gap-2">
+        <div className="flex w-full h-[350px] gap-1.5 md:gap-2">
           {/* Bottom Left (w-28%) */}
           <motion.div variants={itemVariants} className="w-[28%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={four}
               alt="Industrial Plant Dusk" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -82,7 +89,7 @@ const AboutGallerySection = () => {
           {/* Bottom Middle (w-28%) */}
           <motion.div variants={itemVariants} className="w-[28%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={five} 
               alt="Cranes construction" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -92,7 +99,7 @@ const AboutGallerySection = () => {
           {/* Bottom Right (w-44%) */}
           <motion.div variants={itemVariants} className="w-[44%] h-full overflow-hidden relative group">
             <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              src={six} 
               alt="Industrial plant overhead" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />

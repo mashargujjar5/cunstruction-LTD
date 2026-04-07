@@ -1,41 +1,42 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Store, Building2, Wrench, Building, Box, Route, ArrowRight } from 'lucide-react';
+import servicesBg from '../assets/images/services_bg.png';
 
 const services = [
   {
     title: 'Commercial',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'We specialize in constructing high-quality, durable, and modern commercial properties tailored to your business needs.',
     icon: Store,
     highlight: false,
   },
   {
     title: 'Residential',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'Building dream homes with uncompromising quality, modern design, and sustainable construction practices.',
     icon: Building2,
     highlight: true,
   },
   {
     title: 'Renovation',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'Breathe new life into existing spaces with our expert renovation and restoration services.',
     icon: Wrench,
     highlight: false,
   },
   {
     title: 'Remodeling',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'Transform your living or work environment with our custom remodeling solutions and top-tier craftsmanship.',
     icon: Building,
     highlight: false,
   },
   {
     title: 'Infrastructure',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'Developing critical infrastructure projects that form the backbone of modern communities.',
     icon: Box,
     highlight: false,
   },
   {
     title: 'Road Construction',
-    description: 'We specialize in constructing high-quality, durable, and modern residential properties.',
+    description: 'Expertise in high-quality road construction and pavement services for long-lasting durability.',
     icon: Route,
     highlight: false,
   },
@@ -51,9 +52,36 @@ const ServicesSection = () => {
   // Parallax effect for the background image
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   
-  // Slight opacity fade based on scroll for the header
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.3], [0, 0.5, 1]);
-  const headerY = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 1, ease: "easeOut" }
+    }
+  };
 
   return (
     <section ref={sectionRef} className="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
@@ -63,48 +91,48 @@ const ServicesSection = () => {
         className="absolute inset-0 z-0 h-[130%]" 
       >
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[20%] brightness-[0.7]"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop')",
+            backgroundImage: `url(${servicesBg})`,
           }}
         />
       </motion.div>
-      <div className="absolute inset-0 bg-slate-900/80 z-10" />
+      <div className="absolute inset-0 bg-slate-900/40 z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Section Header */}
         <motion.div 
-          style={{ opacity: headerOpacity, y: headerY }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
           className="text-center text-white mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">Our Services</h2>
-          <p className="text-lg md:text-xl text-gray-300 font-light max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight drop-shadow-lg">Our Services</h2>
+          <p className="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-md">
             Building Excellence, One Project At A Time
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Services Grid with Staggered Entrance */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.95 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.8, 
-                delay: index * 0.15, 
-                type: "spring", 
-                stiffness: 70,
-                damping: 15
-              }}
-              whileHover={{ y: -10 }}
-              className={`group relative p-8 md:p-10 rounded-[16px] flex flex-col items-center text-center overflow-hidden transition-all duration-500 shadow-xl z-10 ${
+              variants={itemVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className={`group relative p-8 md:p-10 rounded-[16px] flex flex-col items-center text-center overflow-hidden transition-all duration-500 shadow-2xl z-10 ${
                 service.highlight ? 'text-black' : 'text-gray-900'
               }`}
             >
               {/* Base Background */}
-              <div className={`absolute inset-0 -z-20 transition-colors duration-500 ${service.highlight ? 'bg-[#FFCC00]' : 'bg-white'}`} />
+              <div className={`absolute inset-0 -z-20 transition-colors duration-500 ${service.highlight ? 'bg-[#FFCC00]' : 'bg-white/95 backdrop-blur-sm'}`} />
               
               {/* Hover Background fill effect */}
               {!service.highlight && (
@@ -130,7 +158,7 @@ const ServicesSection = () => {
               <p className={`mb-8 leading-relaxed max-w-xs relative z-10 transition-colors duration-300 ${
                 service.highlight 
                   ? 'text-black/80 group-hover:text-gray-600' 
-                  : 'text-gray-500 group-hover:text-black/80'
+                  : 'text-gray-600 group-hover:text-black/80'
               }`}>
                 {service.description}
               </p>
@@ -149,7 +177,7 @@ const ServicesSection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

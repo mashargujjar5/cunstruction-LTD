@@ -9,7 +9,7 @@ const contentData = [
     location: "London",
     projectName: "Westwood Shopping Center",
     description: "A complete remodeling project to modernize an existing shopping complex with a fresh, vibrant look, upgraded facilities, and improved accessibility.",
-    image: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: "trusted",
