@@ -7,6 +7,7 @@ import ServicesSection from './components/ServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import RecentProjects from './components/RecentProjects';
 import TraditionSection from './components/TraditionSection';
+import ContactSection from './components/ContactSection';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <WhyChooseUs />
       <RecentProjects />
       <TraditionSection />
+      <ContactSection />
     </div>
   );
 }
