@@ -5,6 +5,7 @@ import AboutGallerySection from "../components/AboutGallerySection";
 import OurStorySection from "../components/OurStorySection";
 import MissionSection from "../components/MissionSection";
 import TeamSection from "../components/TeamSection";
+import ProcessSection from "../components/ProcessSection";
 
 function About() {
   return (
@@ -14,7 +15,9 @@ function About() {
       <AboutGallerySection />
       <OurStorySection />
       <MissionSection />
+      
       <TeamSection />
+      <ProcessSection />
       <Footer />
     </>
   );
