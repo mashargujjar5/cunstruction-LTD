@@ -8,6 +8,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import RecentProjects from './components/RecentProjects';
 import TraditionSection from './components/TraditionSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 import TestimonialsSection from './components/TestimonialsSection';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       
       <ContactSection />
       <TestimonialsSection />
+      <Footer />
     </div>
   );
 }
